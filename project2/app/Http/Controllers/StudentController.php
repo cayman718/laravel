@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CarController extends Controller
+class  StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +33,7 @@ class CarController extends Controller
 
 
         // dd('hello cars index');
-        return view('car.index', ['data' => $data]);
+        return view('student.index', ['data' => $data]);
     }
 
     /**
@@ -84,5 +84,13 @@ class CarController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public  function excel()
+    {
+        echo 'hello student controller excel';
+    }
+    public function sayHello()
+    {
+        return 'hello lin';
     }
 }
