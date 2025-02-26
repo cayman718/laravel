@@ -2,20 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    Hello index blade view
-    <?php
-        //dd($data)
 
-    ?>
     @php
-    dd($data);
+    // dd($data) ;
     @endphp
+
+    <div class="container mt-3">
+        <h2>Bordered Table</h2>
+        <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th width="10%">ID</th>
+                    <th>NAME</th>
+                    <th>ADDRESS</th>
+                    <th>love</th>
+                    <th>created_at</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($data as $value)
+                <tr>
+                    <td>{{$value->id}}</td>
+                    <td>{{$value->name}}</td>
+                    <td>{{$value->address}}</td>
+                    <td>{{$value->love}}</td>
+                    <td>{{$value->created_at}}</td>
+                </tr>
+                @endforeach
+
+
+            </tbody>
+        </table>
+    </div>
+
 </body>
 
 </html>

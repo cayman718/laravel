@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,25 +14,24 @@ class CarController extends Controller
         // 抓全部資料
         $data = [
             [
-                'id' => 1,
+                'id'   => 1,
                 'name' => '台北店',
-                'rank' => 'a1'
+                'rank' => 'a1',
             ],
             [
-                'id' => 2,
+                'id'   => 2,
                 'name' => '台中店',
-                'rank' => 'a2'
+                'rank' => 'a2',
             ],
             [
-                'id' => 3,
+                'id'   => 3,
                 'name' => '高雄店',
-                'rank' => 'a3'
+                'rank' => 'a3',
             ],
         ];
 
-
         // dd('hello cars index');
-        return view('car.index', ['data' => $data]);
+        // return view('car.index', ['data' => $data]);
     }
 
     /**
@@ -44,7 +42,6 @@ class CarController extends Controller
         // dd('cars create ok');
         return view('car.create');
     }
-
 
     /**
      * Store a newly created resource in storage.

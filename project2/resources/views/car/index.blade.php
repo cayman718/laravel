@@ -21,16 +21,16 @@
                 <tr>
                     <th>id</th>
                     <th>name</th>
-                    <th>rank</th>
+                    <th>moblie</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($data as $key => $value) : ?>
-                <tr>
-                    <td>{{$value['id']}}</td>
-                    <td>{{$value['name']}}</td>
-                    <td>{{$value['rank']}}</td>
-                </tr>
+                <?php foreach ($data as $key => $value): ?>
+                    <tr>
+                        <td>{{$value->id}}</td>
+                        <td>{{$value->name}}</td>
+                        <td>{{$value->moblie}}</td>
+                    </tr>
                 <?php endforeach; ?>
 
 

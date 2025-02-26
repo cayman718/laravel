@@ -2,50 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
-class  StudentController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $data = DB::table('dog')->get();
 
-        // 抓全部資料
-        $data = [
-            [
-                'id' => 1,
-                'name' => '台北店',
-                'rank' => 'a1'
-            ],
-            [
-                'id' => 2,
-                'name' => '台中店',
-                'rank' => 'a2'
-            ],
-            [
-                'id' => 3,
-                'name' => '高雄店',
-                'rank' => 'a3'
-            ],
-        ];
-
-
-        // dd('hello cars index');
         return view('student.index', ['data' => $data]);
+
+        /**
+         * Show the form for creating a new resource.
+         */
+        // public function create()
+        // {
+        //     // dd('cars create ok');
+        //     return view('car.create');
+        // }
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        // dd('cars create ok');
-        return view('car.create');
-    }
-
-
     /**
      * Store a newly created resource in storage.
      */
@@ -85,12 +65,16 @@ class  StudentController extends Controller
     {
         //
     }
-    public  function excel()
+    public function excel()
     {
         echo 'hello student controller excel';
     }
     public function sayHello()
     {
-        return 'hello lin';
+        echo 'hello lin';
+    }
+    public function apple()
+    {
+        echo 'hello lin';
     }
 }
