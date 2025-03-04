@@ -4,18 +4,18 @@ use App\Http\Controllers\StudentController;
 // use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     $data = [
-//         's1' => 'amy',
-//         's2' => 'bob',
-//         's3' => 'cat',
-//     ];
+Route::get('/', function () {
+    $data = [
+        's1' => 'amy',
+        's2' => 'bob',
+        's3' => 'cat',
+    ];
 
-//     // $data = asset('assets/css');
-//     // $data = 'http://localhost/';
+    // $data = asset('assets/css');
+    // $data = 'http://localhost/';
 
-//     $data = env('MY_PWD');
-//     dd($data);
+    $data = env('MY_PWD');
+    dd($data);
 
 // return view('welcome');
 // return redirect()->route('student.index');
