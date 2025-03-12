@@ -12,7 +12,7 @@
 <body>
 
     @php
-    // dd($data) ;
+        // dd($data)    ;
     @endphp
 
     <div class="container mt-3">
@@ -32,38 +32,35 @@
                     <th width="10%">NAME</th>
                     <th width="20%">MOBILE</th>
                     <th width="20%">PHONE</th>
-                    <th width="20%">name</th>
+                    <th width="20%">HOBBIES</th>
                     <th>OPT</th>
                 </tr>
             </thead>
             <tbody>
                 @php
-                // dd($data) ;
-
+                    // dd($data)    ;
                 @endphp
                 @foreach ($data as $value)
-                <tr>
-                    <td>{{ $value->id }}</td>
-                    <td>{{ $value->name }}</td>
-                    <td>{{ $value->mobile }}</td>
-                    <td>
-                        {{ $value->phone->id ?? '' }}
-                        {{ $value->phone->student_id ?? '' }}
-                        {{ $value->phone->phone ?? '' }}
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                        <form action="{{ route('students.destroy', ['student' => $value->id]) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <a href="{{ route('students.edit', ['student' => $value->id]) }}"
-                                class="btn btn-warning">edit</a>
-                            <button type="submit" class="btn btn-danger">del</button>
-                        </form>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ $value->id }}</td>
+                        <td>{{ $value->name }}</td>
+                        <td>{{ $value->mobile }}</td>
+                        <td>
+                            {{ $value->phone->phone ?? '' }}
+                        </td>
+                        <td>
+                            {{ $value->hobbyString ?? '' }}
+                        </td>
+                        <td>
+                            <form action="{{ route('students.destroy', ['student' => $value->id]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <a href="{{ route('students.edit', ['student' => $value->id]) }}"
+                                    class="btn btn-warning">edit</a>
+                                <button type="submit" class="btn btn-danger">del</button>
+                            </form>
+                        </td>
+                    </tr>
                 @endforeach
 
 
@@ -93,7 +90,8 @@
 
                             <div class="mb-3 mt-3">
                                 <label for="name">Name:</label>
-                                <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
+                                <input type="name" class="form-control" id="name" placeholder="Enter name"
+                                    name="name">
                             </div>
                             <div class="mb-3 mt-3">
                                 <label for="mobile">Mobile:</label>
